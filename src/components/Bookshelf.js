@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../styles/Bookshelf.css';
 import Book from './Book';
-import AddBookForm from './AddBookForm';
 import { fetchBooksFromLocalStorage } from './StoreBooks';
 
 const Bookshelf = () => {
@@ -22,7 +21,6 @@ const Bookshelf = () => {
 
   return (
     <div className="bookshelf-container">
-      <h2 className="bookshelf-title">My Library</h2>
       <div className="bookshelf">
         <div className="book-grid">
           {books.map((book) => (

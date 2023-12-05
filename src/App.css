@@ -1,10 +1,5 @@
 .App {
   text-align: center;
-  height: 100%;
-  min-height: 100vh;
-  background-image: url('./images/wall.png');
-  background-position: center top;
-  background-size: cover;
 }
 
 .App-header {
@@ -12,24 +7,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 28px;
   background-color: #6A8F82;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Yeseva+One&display=swap');
+
+main {
+  height: 100%;
+  min-height: 100vh;
+  background-image: url('./images/wall.png');
+  background-position: center top;
+  background-size: cover;
+}
 
 header > h1 {
   font-family: 'Yeseva One', serif;
   font-size: 80px;
   line-height: 100px;
   color: #FFFFFF;
-  margin: 20px;
-}
-
-div > h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 40px;
-  line-height: 52px;
-  font-weight: 600;
-  color: #CFE6DD;
   margin: 20px;
 }

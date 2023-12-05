@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 40px;;
 }
     
 .bookshelf {
   position: relative;
   width: 800px;
-  height: 528px;
+  height: 532px;
   margin: auto;
   padding: 20px;
   background-image: url('../images/bookshelf_display.png');
@@ -27,4 +28,3 @@
   margin-top: 20px;
   margin-left: 40px;
 }
-    

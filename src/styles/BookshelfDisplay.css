@@ -1,0 +1,18 @@
+.collection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collection > h2 {
+    width: 800px;
+    align-self: center;
+
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    line-height: 52px;
+    font-weight: 600;
+    color: #CFE6DD;
+    padding: 20px 0px;
+  }
