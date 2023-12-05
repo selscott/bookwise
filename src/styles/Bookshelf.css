@@ -1,0 +1,30 @@
+.bookshelf-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    
+.bookshelf {
+  position: relative;
+  width: 800px;
+  height: 528px;
+  margin: auto;
+  padding: 20px;
+  background-image: url('../images/bookshelf_display.png');
+  background-size: contain;
+  background-repeat: repeat-y;
+  background-position: center top;
+}
+    
+.bookshelf-title {
+  text-align: center;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+    
