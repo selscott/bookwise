@@ -11,10 +11,10 @@ const AddBookForm = ({ shelfId, onAddBook }) => {
     coverImage: '',
     notes: '',
     rating: 1,
-    format: 'print',
+    format: '',
     startDate: '',
     endDate: '',
-    readingStatus: 'To Be Read',
+    readingStatus: '',
     currentPage: '',
   });
 
@@ -31,7 +31,7 @@ const AddBookForm = ({ shelfId, onAddBook }) => {
     { name: '★★★★★', value: '5' },
   ];
 
-  const formats = ['print', 'ebook', 'audiobook'];
+  const formats = ['Print', 'eBook', 'Audiobook'];
 
   const readingStatusOptions = ['Read', 'Currently Reading', 'To Be Read'];
 

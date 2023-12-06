@@ -17,7 +17,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
     { name: '★★★★★', value: '5' },
   ];
 
-  const formats = ['print', 'ebook', 'audiobook'];
+  const formats = ['Print', 'eBook', 'Audiobook'];
 
   const readingStatusOptions = ['Read', 'Currently Reading', 'To Be Read'];
 

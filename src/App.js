@@ -30,19 +30,19 @@ function App() {
       <header className="App-header">
         <h1>BookWise</h1>
         <Button variant="outline-light" size="lg" onClick={() => setShowAddShelfModal(true)}>
-          Add Bookshelf
+          Add Collection
         </Button>
         <Modal show={showAddShelfModal} onHide={() => setShowAddShelfModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Bookshelf</Modal.Title>
+            <Modal.Title>Add Collection</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
               <Form.Group controlId="formShelfName">
-                <Form.Label>Shelf Name</Form.Label>
+                <Form.Label>Collection Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Enter shelf name"
+                  placeholder="e.g. Favorite Books"
                   value={newShelfName}
                   onChange={(e) => setNewShelfName(e.target.value)}
                 />
@@ -54,7 +54,7 @@ function App() {
               Close
             </Button>
             <Button variant="primary" onClick={handleAddShelf}>
-              Add Shelf
+              Add Collection
             </Button>
           </Modal.Footer>
         </Modal>

@@ -30,6 +30,76 @@ header > h1 {
   margin: 12px;
 }
 
-header > .btn:hover {
+.modal-header > .modal-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
   color: #2B473E;
+}
+
+header > .btn:hover  {
+  color: #2B473E;
+}
+
+.modal-footer > .btn-primary {
+  background-color: #6A8F82;
+  border-color: #6A8F82;
+}
+
+.modal-footer > .btn-primary:hover {
+  background-color: #2B473E;
+  border-color: #2B473E;
+}
+
+body .modal-footer > .btn-primary:active {
+  background-color: #143329;
+  border-color: #143329;
+}
+
+.modal-body .btn-primary {
+  background-color: #6A8F82;
+  border-color: #6A8F82;
+}
+
+.modal-body .btn-primary:hover {
+  background-color: #2B473E;
+  border-color: #2B473E;
+}
+
+body .modal-body .btn-primary:active {
+  background-color: #143329;
+  border-color: #143329;
+}
+
+.modal-body .btn-outline-primary {
+  border-color: #6A8F82;
+  color: #6A8F82;
+}
+
+.modal-body .btn-check+.btn:hover {
+  border-color: #2B473E;
+  color: #2B473E;
+}
+
+body .modal-body .btn-check+.btn:active {
+  border-color: #143329;
+  color: #143329;
+}
+
+.modal-body .btn-check:checked+.btn {
+  background-color: #6A8F82;
+  border-color: #6A8F82;
+}
+
+.modal-body .btn-check:checked+.btn:hover {
+  background-color: #2B473E;
+  border-color: #2B473E;
+  color: #FFFFFF;
+}
+
+body .modal-body .btn-check:checked+.btn:active {
+  background-color: #143329;
+  border-color: #143329;
+  color: #FFFFFF;
 }
