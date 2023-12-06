@@ -15,7 +15,7 @@ const Book = ({ id, coverImage, book, onEdit }) => {
         <EditBookForm
           book={book}
           onSave={(editedBook) => {
-            onEdit(id, editedBook);
+            onEdit(editedBook);
             setShowEditForm(false);
           }}
         />
