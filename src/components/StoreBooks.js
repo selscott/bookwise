@@ -1,12 +1,16 @@
 const fetchBooksFromLocalStorage = () => {
-    const storedBooks = localStorage.getItem('books');
-    return storedBooks ? JSON.parse(storedBooks) : [];
-  };
-  
-const addBookToLocalStorage = (newBookData) => {
-  const storedBooks = fetchBooksFromLocalStorage();
-  const updatedBooks = [...storedBooks, newBookData];
-  localStorage.setItem('books', JSON.stringify(updatedBooks));
+  try {
+    const storedShelves = localStorage.getItem('shelves');
+    const shelves = storedShelves ? JSON.parse(storedShelves) : [];
+    
+    const firstShelf = shelves[0] || {};
+    const books = firstShelf.books || [];
+
+    return books;
+  } catch (error) {
+    console.error('Error fetching books from local storage:', error);
+    return [];
+  }
 };
   
-export { fetchBooksFromLocalStorage, addBookToLocalStorage };
+export { fetchBooksFromLocalStorage };

@@ -3,6 +3,7 @@ import { Button, Form, ToggleButton, ButtonGroup } from 'react-bootstrap';
 
 const AddBookForm = ({ shelfId, onAddBook }) => {
   const [newBook, setNewBook] = useState({
+    id: '',
     title: '',
     author: '',
     genre: '',
@@ -40,7 +41,7 @@ const AddBookForm = ({ shelfId, onAddBook }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddBook(shelfId, newBook);
+    onAddBook(shelfId, { ...newBook, id: Date.now() });
     setNewBook({
       title: '',
       author: '',
