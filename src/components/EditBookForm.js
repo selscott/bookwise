@@ -33,7 +33,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
   return (
     <Modal show={true} onHide={() => onSave(null)}>
       <Modal.Header closeButton>
-        <Modal.Title>Edit Book</Modal.Title>
+        <Modal.Title>Book Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
@@ -41,7 +41,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
             <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter title"
+              placeholder="Pride and Prejudice"
               name="title"
               value={editedBook.title}
               onChange={handleInputChange}
@@ -53,7 +53,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
             <Form.Label>Author</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter author"
+              placeholder="Jane Austen"
               name="author"
               value={editedBook.author}
               onChange={handleInputChange}
@@ -65,7 +65,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
             <Form.Label>Genre</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter genre"
+              placeholder="Romance"
               name="genre"
               value={editedBook.genre}
               onChange={handleInputChange}
@@ -73,10 +73,10 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
           </Form.Group>
 
           <Form.Group controlId="formPageNumbers">
-            <Form.Label>Page Numbers</Form.Label>
+            <Form.Label>Pages</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Enter page numbers"
+              type="number"
+              placeholder="480"
               name="pageNumbers"
               value={editedBook.pageNumbers}
               onChange={handleInputChange}
@@ -84,10 +84,10 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
           </Form.Group>
 
           <Form.Group controlId="formCoverImage">
-            <Form.Label>Cover Image URL</Form.Label>
+            <Form.Label>Cover Image</Form.Label>
             <Form.Control
               type="url"
-              placeholder="Enter cover image URL"
+              placeholder="https://example.com/images/image.png"
               name="coverImage"
               value={editedBook.coverImage}
               onChange={handleInputChange}
@@ -101,7 +101,7 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
             <Form.Control
               as="textarea"
               rows={3}
-              placeholder="Enter notes"
+              placeholder="I thought..."
               name="notes"
               value={editedBook.notes}
               onChange={handleInputChange}

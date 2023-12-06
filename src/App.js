@@ -5,6 +5,10 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import BookshelfDisplay from './components/BookshelfDisplay';
 
 function App() {
+  useEffect(() => {
+    document.title = 'BookWise';
+  }, []);
+
   const [showAddShelfModal, setShowAddShelfModal] = useState(false);
   const [newShelfName, setNewShelfName] = useState('');
   const [shelves, setShelves] = useState(() => {
