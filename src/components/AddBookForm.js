@@ -117,6 +117,8 @@ const AddBookForm = ({ shelfId, onAddBook }) => {
         />
       </Form.Group>
 
+      <hr />
+
       <Form.Group controlId="formNotes">
         <Form.Label>Notes</Form.Label>
         <Form.Control

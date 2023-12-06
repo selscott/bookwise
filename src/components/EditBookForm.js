@@ -94,6 +94,8 @@ const EditBookForm = ({ book, onSave, onDelete }) => {
             />
           </Form.Group>
 
+          <hr />
+
           <Form.Group controlId="formNotes">
             <Form.Label>Notes</Form.Label>
             <Form.Control

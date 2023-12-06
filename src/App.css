@@ -30,6 +30,10 @@ header > h1 {
   margin: 12px;
 }
 
+header > .btn:hover  {
+  color: #2B473E;
+}
+
 .modal-header > .modal-title {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
@@ -38,8 +42,16 @@ header > h1 {
   color: #2B473E;
 }
 
-header > .btn:hover  {
-  color: #2B473E;
+.modal-body > form > hr {
+  height: 2px;
+  opacity: 0.48;
+  background-color: #6A8F82;
+  border-color: #6A8F82;
+  margin: 16px 0px 8px 0px;
+}
+
+.modal-body .form-label {
+  margin-right: 12px;
 }
 
 .modal-footer > .btn-primary {

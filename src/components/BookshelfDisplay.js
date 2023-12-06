@@ -99,15 +99,15 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
 
       <Modal show={showEditShelfModal} onHide={() => setShowEditShelfModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Bookshelf Name</Modal.Title>
+          <Modal.Title>Edit Collection</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group controlId="formShelfName">
-              <Form.Label>Shelf Name</Form.Label>
+              <Form.Label>Collection Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter shelf name"
+                placeholder="e.g. Favorite Books"
                 value={editedShelfName}
                 onChange={(e) => setEditedShelfName(e.target.value)}
               />
