@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../styles/Book.css';
 import EditBookForm from './EditBookForm';
 
-const Book = ({ id, coverImage, book, onEdit }) => {
+const Book = ({ id, coverImage, book, onEdit, onDelete }) => {
   const [showEditForm, setShowEditForm] = useState(false);
 
   return (
@@ -18,6 +18,7 @@ const Book = ({ id, coverImage, book, onEdit }) => {
             onEdit(editedBook);
             setShowEditForm(false);
           }}
+          onDelete={onDelete}
         />
       )}
     </>

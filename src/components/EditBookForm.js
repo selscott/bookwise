@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Modal, Button, Form, ToggleButton, ButtonGroup } from 'react-bootstrap';
 
-const EditBookForm = ({ book, onSave }) => {
+const EditBookForm = ({ book, onSave, onDelete }) => {
   const [editedBook, setEditedBook] = useState(book);
 
   const handleInputChange = (e) => {
@@ -198,8 +198,8 @@ const EditBookForm = ({ book, onSave }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={() => onSave(null)}>
-          Close
+        <Button variant="danger" onClick={() => onDelete(editedBook.id)}>
+          Delete
         </Button>
         <Button variant="primary" onClick={handleSubmit}>
           Save Changes

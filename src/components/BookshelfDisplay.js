@@ -56,6 +56,16 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
     setShowEditShelfModal(false);
   };
 
+  const handleDeleteBook = (bookId, shelfId) => {
+    setShelves((prevShelves) =>
+      prevShelves.map((shelf) =>
+        shelf.shelfId === shelfId
+          ? { ...shelf, books: shelf.books.filter((book) => book.id !== bookId) }
+          : shelf
+      )
+    );
+  };
+
   return (
     <div>
 
@@ -78,7 +88,12 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
               </Button>
             </div>
           </div>
-          <Bookshelf shelfId={shelf.shelfId} books={shelf.books || []} onEditBook={handleEditBook} />
+          <Bookshelf
+            shelfId={shelf.shelfId}
+            books={shelf.books || []}
+            onEditBook={handleEditBook}
+            onDeleteBook={handleDeleteBook}
+          />
         </div>
       ))}
 

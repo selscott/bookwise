@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import '../styles/Bookshelf.css';
 import Book from './Book';
 
-const Bookshelf = ({ shelfId, books, onEditBook }) => {
+const Bookshelf = ({ shelfId, books, onEditBook, onDeleteBook }) => {
   const booksPerShelf = 4;
   const singleShelfHeight = 266;
   const initialShelfHeight = 532;
@@ -38,6 +38,7 @@ const Bookshelf = ({ shelfId, books, onEditBook }) => {
                 onEditBook(book.id, editedBook, shelfId);
                 updateShelfHeight();
               }}
+              onDelete={() => onDeleteBook(book.id, shelfId)}
             />
           ))}
         </div>
