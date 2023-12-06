@@ -9,7 +9,7 @@ function App() {
   const [newShelfName, setNewShelfName] = useState('');
   const [shelves, setShelves] = useState(() => {
     const storedShelves = localStorage.getItem('shelves');
-    return storedShelves ? JSON.parse(storedShelves) : [{ id: 1, name: 'My Library', books: [] }];
+    return storedShelves ? JSON.parse(storedShelves) : [{ shelfId: 1, name: 'My Library', books: [] }];
   });
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
 
   const handleAddShelf = () => {
     if (newShelfName.trim() !== '') {
-      const newShelf = { id: Date.now(), name: newShelfName, books: [] };
+      const newShelf = { shelfId: Date.now(), name: newShelfName, books: [] };
       setShelves((prevShelves) => [...prevShelves, newShelf]);
       setNewShelfName('');
       setShowAddShelfModal(false);
