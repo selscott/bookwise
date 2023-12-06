@@ -28,6 +28,15 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
     setShowEditShelfModal(false);
   };
 
+  const handleAddBook = (shelfId, newBook) => {
+    setShelves((prevShelves) =>
+      prevShelves.map((shelf) =>
+        shelf.id === shelfId ? { ...shelf, books: [...(shelf.books || []), newBook] } : shelf
+      )
+    );
+    setShowAddBookModal(false);
+  };
+
   return (
     <div>
 
@@ -39,7 +48,13 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
               <Button variant="outline-light" onClick={() => handleEditShelf(shelf.id, shelf.name)}>
                 Edit
               </Button>
-              <Button variant="outline-light" onClick={() => setShowAddBookModal(true)}>
+              <Button
+                variant="outline-light"
+                onClick={() => {
+                  setSelectedShelfId(shelf.id);
+                  setShowAddBookModal(true);
+                }}
+              >
                 Add Book
               </Button>
             </div>
@@ -80,16 +95,8 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
           <Modal.Title>Add Book</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AddBookForm />
+          <AddBookForm shelfId={selectedShelfId} onAddBook={handleAddBook} />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowAddBookModal(false)}>
-            Close
-          </Button>
-          <Button variant="primary" type="submit">
-            Add Book
-          </Button>
-        </Modal.Footer>
       </Modal>
 
     </div>
