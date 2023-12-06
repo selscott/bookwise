@@ -8,7 +8,6 @@
 .bookshelf {
   position: relative;
   width: 800px;
-  height: 532px;
   margin: auto;
   padding: 20px;
   background-image: url('../images/bookshelf_display.png');
@@ -24,7 +23,6 @@
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-  margin-left: 40px;
+  gap: 52px 8px ;
+  margin: 28px 40px 0px 40px;
 }

@@ -17,6 +17,13 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
     setShowEditShelfModal(true);
   };
 
+  const handleDeleteShelf = () => {
+    setShelves((prevShelves) =>
+      prevShelves.filter((shelf) => shelf.shelfId !== selectedShelfId)
+    );
+    setShowEditShelfModal(false);
+  };
+
   const handleSaveEditedShelf = () => {
     setShelves((prevShelves) =>
       prevShelves.map((shelf) =>
@@ -93,8 +100,8 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowEditShelfModal(false)}>
-            Close
+          <Button variant="danger" onClick={handleDeleteShelf}>
+            Delete
           </Button>
           <Button variant="primary" onClick={handleSaveEditedShelf}>
             Save Changes
