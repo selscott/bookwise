@@ -1,10 +1,10 @@
-const fetchBooksFromLocalStorage = () => {
+const fetchBooksFromLocalStorage = (shelfId) => {
   try {
     const storedShelves = localStorage.getItem('shelves');
     const shelves = storedShelves ? JSON.parse(storedShelves) : [];
     
-    const firstShelf = shelves[0] || {};
-    const books = firstShelf.books || [];
+    const targetShelf = shelves.find((shelf) => shelf.shelfId === shelfId) || {};
+    const books = targetShelf.books || [];
 
     return books;
   } catch (error) {
@@ -12,5 +12,5 @@ const fetchBooksFromLocalStorage = () => {
     return [];
   }
 };
-  
+
 export { fetchBooksFromLocalStorage };

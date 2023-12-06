@@ -9,8 +9,7 @@ const Bookshelf = ({ shelfId }) => {
   useEffect(() => {
     const fetchBooks = () => {
       try {
-        const localStorageBooks = fetchBooksFromLocalStorage();
-        const shelfBooks = localStorageBooks.filter((book) => book.shelfId === shelfId);
+        const shelfBooks = fetchBooksFromLocalStorage(shelfId);
         setBooks(shelfBooks);
       } catch (error) {
         console.error('Error fetching books from local storage:', error);

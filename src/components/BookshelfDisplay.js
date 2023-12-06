@@ -20,7 +20,7 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
   const handleSaveEditedShelf = () => {
     setShelves((prevShelves) =>
       prevShelves.map((shelf) =>
-        shelf.id === selectedShelfId ? { ...shelf, name: editedShelfName } : shelf
+        shelf.shelfId === selectedShelfId ? { ...shelf, name: editedShelfName } : shelf
       )
     );
     setEditedShelfName('');
@@ -31,7 +31,7 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
   const handleAddBook = (shelfId, newBook) => {
     setShelves((prevShelves) =>
       prevShelves.map((shelf) =>
-        shelf.id === shelfId ? { ...shelf, books: [...(shelf.books || []), newBook] } : shelf
+        shelf.shelfId === shelfId ? { ...shelf, books: [...(shelf.books || []), newBook] } : shelf
       )
     );
     setShowAddBookModal(false);
@@ -41,17 +41,17 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
     <div>
 
       {shelves.map((shelf) => (
-        <div className="collection" key={shelf.id}>
+        <div className="collection" key={shelf.shelfId}>
           <div className="collection-header">
             <h2>{shelf.name}</h2>
             <div className="action-buttons">
-              <Button variant="outline-light" onClick={() => handleEditShelf(shelf.id, shelf.name)}>
+              <Button variant="outline-light" onClick={() => handleEditShelf(shelf.shelfId, shelf.name)}>
                 Edit
               </Button>
               <Button
                 variant="outline-light"
                 onClick={() => {
-                  setSelectedShelfId(shelf.id);
+                  setSelectedShelfId(shelf.shelfId);
                   setShowAddBookModal(true);
                 }}
               >
@@ -59,7 +59,7 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
               </Button>
             </div>
           </div>
-          <Bookshelf shelfId={shelf.id} />
+          <Bookshelf shelfId={shelf.shelfId} />
         </div>
       ))}
 
