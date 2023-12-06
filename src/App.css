@@ -28,3 +28,7 @@ header > h1 {
   color: #FFFFFF;
   margin: 20px;
 }
+
+header > .btn:hover {
+  color: #2B473E;
+}

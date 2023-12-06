@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/BookshelfDisplay.css';
 import Bookshelf from './Bookshelf';
+import AddBookForm from './AddBookForm';
 import { Button, Modal, Form } from 'react-bootstrap';
 
 const BookshelfDisplay = ({ shelves, setShelves }) => {
   const [showEditShelfModal, setShowEditShelfModal] = useState(false);
   const [editedShelfName, setEditedShelfName] = useState('');
   const [selectedShelfId, setSelectedShelfId] = useState(null);
+
+  const [showAddBookModal, setShowAddBookModal] = useState(false);
 
   const handleEditShelf = (shelfId, shelfName) => {
     setSelectedShelfId(shelfId);
@@ -27,13 +30,19 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
 
   return (
     <div>
+
       {shelves.map((shelf) => (
         <div className="collection" key={shelf.id}>
           <div className="collection-header">
             <h2>{shelf.name}</h2>
-            <Button variant="outline-light" onClick={() => handleEditShelf(shelf.id, shelf.name)}>
-              Edit
-            </Button>
+            <div className="action-buttons">
+              <Button variant="outline-light" onClick={() => handleEditShelf(shelf.id, shelf.name)}>
+                Edit
+              </Button>
+              <Button variant="outline-light" onClick={() => setShowAddBookModal(true)}>
+                Add Book
+              </Button>
+            </div>
           </div>
           <Bookshelf shelfId={shelf.id} />
         </div>
@@ -65,6 +74,24 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      <Modal show={showAddBookModal} onHide={() => setShowAddBookModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Book</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <AddBookForm />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowAddBookModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" type="submit">
+            Add Book
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </div>
   );
 };
