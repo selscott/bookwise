@@ -59,7 +59,7 @@ const BookshelfDisplay = ({ shelves, setShelves }) => {
               </Button>
             </div>
           </div>
-          <Bookshelf shelfId={shelf.shelfId} />
+          <Bookshelf shelfId={shelf.shelfId} books={shelf.books || []} />
         </div>
       ))}
 
