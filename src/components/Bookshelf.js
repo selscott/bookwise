@@ -14,7 +14,7 @@ const Bookshelf = ({ shelfId, books }) => {
       <div className="bookshelf">
         <div className="book-grid">
           {shelfBooks.map((book) => (
-            <Book key={book.id} coverImage={book.coverImage} />
+            <Book key={book.id} coverImage={book.coverImage} book={book} />
           ))}
         </div>
       </div>
