@@ -10,4 +10,5 @@
   max-width: 84%;
   max-height: 84%;
   object-fit: contain;
+  box-shadow: 4px 4px 12px rgba(23, 23, 23, 0.40);
 }
